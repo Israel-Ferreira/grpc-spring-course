@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "io.codekaffee.grpcspringcourse";
+option java_multiple_files = true;
+
+package io.codekaffee.grpcspringcourse;
+
+
+service HelloService {
+    rpc Hello(HelloReq) returns (HelloResp);
+}
+
+
+message HelloReq {
+    string message = 1;
+}
+
+message HelloResp {
+    string message = 1;
+}
+
