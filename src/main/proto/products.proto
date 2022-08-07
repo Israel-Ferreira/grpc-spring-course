@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option java_package = "io.codekaffee.grpcspringcourse";
+option java_multiple_files = true;
+
+package io.codekaffee.grpcspringcourse;
+
+service ProductService {
+  rpc FindProducts(EmptyRequest) returns (FindAllProductsResp);
+  rpc CreateProduct(ProductRequest) returns (ProductResponse);
+  rpc FindProductById(FindByIdRequest) returns (ProductResponse);
+  rpc DeleteProduct(FindByIdRequest) returns (ProductResponse);
+}
+
+
+message EmptyRequest  {}
+
+
+message FindByIdRequest {
+  int64 id = 1;
+}
+
+
+message  ProductRequest {
+  string name = 1;
+  double price = 2;
+  int32 quantity_in_stock = 3;
+  string sku = 4;
+  string description = 5;
+}
+
+
+message ProductResponse {
+  int64 id = 1;
+  string name = 2;
+  double price = 3;
+  int32 quantity_in_stock = 4;
+  string sku = 5;
+  string description = 6;
+}
+
+message FindAllProductsResp {
+  repeated ProductResponse products = 1;
+}
