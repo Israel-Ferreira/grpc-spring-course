@@ -34,6 +34,14 @@ public class Product {
         this.description = description;
     }
 
+    public Product(String name, Double price, Integer quantityInStock, String sku, String description) {
+        this.name = name;
+        this.price = price;
+        this.quantityInStock = quantityInStock;
+        this.sku = sku;
+        this.description = description;
+    }
+
     private String description;
 
 
